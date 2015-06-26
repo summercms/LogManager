@@ -1,5 +1,5 @@
 {
-    "name": "Dick/LogManager",
+    "name": "dick/logmanager",
     "description": "An interface to preview, download and delete Laravel log files.",
     "keywords": [
         "dick",
