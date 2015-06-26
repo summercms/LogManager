@@ -17,12 +17,25 @@ Via Composer
 $ composer require Dick/logmanager
 ```
 
+Then add the service provider to your config/app.php file:
+
+``` 
+'Dick\LogManager\LogManagerServiceProvider',
+```
+
 ## Usage
 
+Add a menu element for it:
+
 ``` php
-$skeleton = new Dick\Skeleton();
-echo $skeleton->echoPhrase('Hello, Dick!');
+[
+    'label' => "Logs",
+    'route' => 'admin/log',
+    'icon' => 'fa fa-terminal',
+],
 ```
+
+Or just try at **your-project-domain/admin/log**.
 
 ## Change log
 
