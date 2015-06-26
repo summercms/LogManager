@@ -14,7 +14,7 @@ An interface to preview, download and delete Laravel log files.
 Via Composer
 
 ``` bash
-$ composer require Dick/logmanager
+$ composer require dick/logmanager
 ```
 
 Then add the service provider to your config/app.php file:
