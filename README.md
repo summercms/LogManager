@@ -1,4 +1,4 @@
-# logmanager
+# Dick Log Manager
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/Dick/logmanager.svg?style=flat-square)](https://packagist.org/packages/Dick/logmanager)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -35,7 +35,7 @@ Add a menu element for it:
 ],
 ```
 
-Or just try at **your-project-domain/admin/log**.
+Or just try at **your-project-domain/admin/log**
 
 ## Change log
 
