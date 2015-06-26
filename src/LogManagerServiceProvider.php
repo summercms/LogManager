@@ -23,11 +23,6 @@ class LogManagerServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(realpath(__DIR__.'/views'), 'logmanager');
         $this->setupRoutes($this->app->router);
-        // this  for config
-
-        // $this->publishes([
-        //         __DIR__.'/config/logmanager.php' => config_path('logmanager.php'),
-        // ]);
     }
 
     /**
@@ -52,9 +47,6 @@ class LogManagerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerLogManager();
-        // config([
-        //         'config/logmanager.php',
-        // ]);
     }
 
     private function registerLogManager()
