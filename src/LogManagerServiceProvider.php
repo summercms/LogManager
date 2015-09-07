@@ -22,7 +22,6 @@ class LogManagerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(realpath(__DIR__.'/views'), 'logmanager');
-        $this->setupRoutes($this->app->router);
     }
 
     /**
@@ -47,6 +46,7 @@ class LogManagerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerLogManager();
+        $this->setupRoutes($this->app->router);
     }
 
     private function registerLogManager()
