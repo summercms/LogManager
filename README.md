@@ -35,6 +35,10 @@ Add a menu element for it:
 ],
 ```
 
+## Screenshots
+
+See http://usedick.com
+
 Or just try at **your-project-domain/admin/log**
 
 ## Change log
