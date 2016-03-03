@@ -48,6 +48,10 @@ or directly in your config/app.php file:
 
 Add a menu element for it or just try at **your-project-domain/admin/log**
 
+## Screenshots
+
+See http://usedick.com
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
