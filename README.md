@@ -1,41 +1,52 @@
-# Dick Log Manager
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/Dick/logmanager.svg?style=flat-square)](https://packagist.org/packages/Dick/logmanager)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/dick/logmanager/master.svg?style=flat-square)](https://travis-ci.org/dick/logmanager)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/dick/logmanager.svg?style=flat-square)](https://scrutinizer-ci.com/g/dick/logmanager/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/dick/logmanager.svg?style=flat-square)](https://scrutinizer-ci.com/g/dick/logmanager)
-[![Total Downloads](https://img.shields.io/packagist/dt/Dick/logmanager.svg?style=flat-square)](https://packagist.org/packages/Dick/logmanager)
+# Backpack\LogManager
 
 An interface to preview, download and delete Laravel log files.
 
 ## Install
 
-Via Composer
+1. Install via composer:
 
 ``` bash
-$ composer require dick/logmanager
+$ composer require backpack/logmanager
 ```
 
-Then add the service provider to your config/app.php file:
+2. Then add the service provider to your config/app.php file:
 
 ``` 
-'Dick\LogManager\LogManagerServiceProvider',
+    'Backpack\Logs\LogManagerServiceProvider',
+```
+
+3. Add a "storage" filesystem in config/filesystems.php:
+
+```
+'storage' => [
+            'driver' => 'local',
+            'root'   => storage_path(),
+        ],
+```
+
+4. Configure Laravel to create a new log file for every day, in your .ENV file:
+
+```
+    APP_LOG=daily
+```
+
+or directly in your config/app.php file:
+```
+    'log' => env('APP_LOG', 'daily'),
+```
+
+5. Publish the lang files
+
+```bash
+    php artisan vendor:publish --provider="Backpack\LogManager\LogManagerServiceProvider"
 ```
 
 ## Usage
 
-Add a menu element for it:
+// TODO: update with backpack menu procedure
 
-``` php
-[
-    'label' => "Logs",
-    'route' => 'admin/log',
-    'icon' => 'fa fa-terminal',
-],
-```
-
-Or just try at **your-project-domain/admin/log**
+Add a menu element for it or just try at **your-project-domain/admin/log**
 
 ## Change log
 

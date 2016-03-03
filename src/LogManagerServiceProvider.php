@@ -1,6 +1,6 @@
 <?php
 
-namespace Dick\LogManager;
+namespace Backpack\LogManager;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
@@ -21,7 +21,11 @@ class LogManagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(realpath(__DIR__.'/views'), 'logmanager');
+        $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'logmanager');
+        $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
+
+        // publish lang files
+        $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang/vendor/backpack'), ], 'lang');
     }
 
     /**
@@ -32,7 +36,7 @@ class LogManagerServiceProvider extends ServiceProvider
      */
     public function setupRoutes(Router $router)
     {
-        $router->group(['namespace' => 'Dick\LogManager\Http\Controllers'], function($router)
+        $router->group(['namespace' => 'Backpack\LogManager\Http\Controllers'], function($router)
         {
             require __DIR__.'/Http/routes.php';
         });

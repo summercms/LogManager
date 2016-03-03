@@ -1,14 +1,14 @@
 {
-    "name": "dick/logmanager",
+    "name": "backpack/logmanager",
     "description": "An interface to preview, download and delete Laravel log files.",
     "keywords": [
-        "dick",
+        "backpack",
         "log manager",
         "logs",
         "laravel",
         "log interface"
     ],
-    "homepage": "https://github.com/thephpDick/LogManager",
+    "homepage": "https://github.com/laravel-backpack/LogManager",
     "license": "MIT",
     "authors": [
         {
@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Dick\\LogManager\\": "src"
+            "Backpack\\LogManager\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Dick\\LogManager\\Test\\": "tests"
+            "Backpack\\LogManager\\Test\\": "tests"
         }
     },
     "scripts": {
