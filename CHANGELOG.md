@@ -20,6 +20,13 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## 2.0.1 - 2016-03-03
+
+### Fixed
+- Removed screenshots from readme file.
+- Added backpack/base dependency.
+
+
 ## 2.0.0 - 2016-03-03
 
 ### Fixed
