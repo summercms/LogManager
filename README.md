@@ -2,21 +2,25 @@
 
 An interface to preview, download and delete Laravel log files.
 
+// TODO before it's stable and ready to use:
+- require users to be authenticated to see the logs
+- instructions to add menu item in /base package
+
 ## Install
 
-1. Install via composer:
+1.Install via composer:
 
 ``` bash
 $ composer require backpack/logmanager
 ```
 
-2. Then add the service provider to your config/app.php file:
+2.Then add the service provider to your config/app.php file:
 
 ``` 
     'Backpack\Logs\LogManagerServiceProvider',
 ```
 
-3. Add a "storage" filesystem in config/filesystems.php:
+3.Add a "storage" filesystem in config/filesystems.php:
 
 ```
 'storage' => [
@@ -25,7 +29,7 @@ $ composer require backpack/logmanager
         ],
 ```
 
-4. Configure Laravel to create a new log file for every day, in your .ENV file:
+4.Configure Laravel to create a new log file for every day, in your .ENV file:
 
 ```
     APP_LOG=daily
@@ -36,7 +40,7 @@ or directly in your config/app.php file:
     'log' => env('APP_LOG', 'daily'),
 ```
 
-5. Publish the lang files
+5.Publish the lang files
 
 ```bash
     php artisan vendor:publish --provider="Backpack\LogManager\LogManagerServiceProvider"
