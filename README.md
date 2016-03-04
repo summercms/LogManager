@@ -42,6 +42,12 @@ or directly in your config/app.php file:
     php artisan vendor:publish --provider="Backpack\LogManager\LogManagerServiceProvider"
 ```
 
+6.[optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+
+```html
+<li><a href="{{ url('admin/log') }}"><i class="fa fa-terminal"></i> <span>Logs</span></a></li>
+```
+
 ## Usage
 
 Add a menu element for it or just try at **your-project-domain/admin/log**
