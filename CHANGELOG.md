@@ -19,6 +19,13 @@ All Notable changes to `LogManager` will be documented in this file
 ### Security
 - Nothing
 
+
+## 2.1.1 - 2016-03-04
+
+### Fixed
+- Changed base layout usage to work with BackPack\Base 0.4.x
+
+
 ## 2.1.1 - 2016-03-04
 
 ### Fixed

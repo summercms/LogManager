@@ -1,4 +1,4 @@
-@extends('backpack::layouts.admin')
+@extends('backpack::layout')
 
 @section('page_title')
     {{ trans('backpack::logmanager.log_manager') }}<small>{{ trans('backpack::logmanager.log_manager_description') }}</small>
