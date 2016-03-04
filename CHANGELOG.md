@@ -19,6 +19,11 @@ All Notable changes to `LogManager` will be documented in this file
 ### Security
 - Nothing
 
+## 2.1.1 - 2016-03-04
+
+### Fixed
+- "The log file doesn't exist." error message wasn't in the lang files. Now it is.
+
 
 ## 2.1.0 - STABLE - 2016-03-04
 

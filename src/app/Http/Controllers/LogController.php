@@ -59,7 +59,7 @@ class LogController extends Controller
 		}
 		else
 		{
-			abort(404, "The log file doesn't exist.");
+			abort(404, trans('backpack::logmanager.log_file_doesnt_exist'));
 		}
 	}
 
@@ -77,7 +77,7 @@ class LogController extends Controller
 		}
 		else
 		{
-			abort(404, "The log file doesn't exist.");
+			abort(404, trans('backpack::logmanager.log_file_doesnt_exist'));
 		}
 	}
 
@@ -95,7 +95,7 @@ class LogController extends Controller
 		}
 		else
 		{
-			abort(404, "The log file doesn't exist.");
+			abort(404, trans('backpack::logmanager.log_file_doesnt_exist'));
 		}
 	}
 }
