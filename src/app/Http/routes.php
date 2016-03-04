@@ -1,7 +1,7 @@
 <?php
 
 // Admin Interface Routes
-Route::group(['prefix' => 'admin'], function()
+Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function()
 {
 	// Logs
 	Route::get('log', 'LogController@index');

@@ -1,21 +1,17 @@
-<?php namespace Backpack\LogManager\Http\Controllers;
+<?php namespace Backpack\LogManager\app\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
 use App;
 use Storage;
 use Carbon\Carbon;
 
-class LogController extends Controller {
-
-	public function __construct()
-	{
-		// TODO: check that it only works for authenticated users
-		// $this->middleware('auth');
-	}
-
+class LogController extends Controller
+{
+	/**
+	 * Lists all log files.
+	 */
 	public function index()
 	{
 		$disk = Storage::disk('storage');
