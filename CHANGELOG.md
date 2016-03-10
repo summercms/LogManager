@@ -20,6 +20,11 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## 2.3.0 - 2016-03-10
+
+### Added
+- Working notification bubbles (alerts).
+
 ## 2.2.1 - 2016-03-10
 
 ### Fixed

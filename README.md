@@ -13,7 +13,7 @@ $ composer require backpack/logmanager
 2.Then add the service provider to your config/app.php file:
 
 ``` 
-    'Backpack\Logs\LogManagerServiceProvider',
+    Backpack\LogManager\LogManagerServiceProvider::class,
 ```
 
 3.Add a "storage" filesystem in config/filesystems.php:
