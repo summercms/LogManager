@@ -20,6 +20,12 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## 2.3.1 - 2016-03-10
+
+### Fixed
+- In views, switched to one header section instead of separate sections for page title and breadcrumbs.
+
+
 ## 2.3.0 - 2016-03-10
 
 ### Added
