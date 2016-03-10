@@ -20,6 +20,12 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## 2.2.1 - 2016-03-10
+
+### Fixed
+- Changed BackPack\Base requirement in composer.json to ^0.2
+
+
 ## 2.2.0 - 2016-03-04
 
 ### Fixed
