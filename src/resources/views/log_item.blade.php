@@ -1,26 +1,16 @@
 @extends('backpack::layout')
 
-@section('content-header')
+@section('header')
 	<section class="content-header">
 	  <h1>
-	    {{ trans('backpack::logmanager.logs') }}
+	    {{ trans('backpack::logmanager.log_manager') }}<small>{{ trans('backpack::logmanager.log_manager_description') }}</small>
 	  </h1>
 	  <ol class="breadcrumb">
-	    <li><a href="{{ url('admin/dashboard') }}">Admin</a></li>
-      <li><a href="{{ url('admin/log') }}">{{ trans('backpack::logmanager.logs') }}</a></li>
-	    <li class="active">{{ trans('backpack::logmanager.logs') }}</li>
+	    <li><a href="{{ url('admin') }}">{{ config('base.project_name') }}</a></li>
+      <li><a href="{{ url('admin/log') }}">{{ trans('backpack::logmanager.log_manager') }}</a></li>
+      <li class="active">{{ trans('backpack::logmanager.preview') }}</li>
 	  </ol>
 	</section>
-@endsection
-
-@section('page_title')
-    {{ trans('backpack::logmanager.log_manager') }}<small>{{ trans('backpack::logmanager.log_manager_description') }}</small>
-@endsection
-
-@section('breadcrumbs')
-    <li><a href="{{ url('admin') }}">{{ config('base.project_name') }}</a></li>
-    <li><a href="{{ url('admin/log') }}">{{ trans('backpack::logmanager.log_manager') }}</a></li>
-    <li class="active">{{ trans('backpack::logmanager.preview') }}</li>
 @endsection
 
 @section('content')

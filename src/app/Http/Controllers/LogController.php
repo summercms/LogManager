@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App;
 use Storage;
 use Carbon\Carbon;
+use Prologue\Alerts\Facades\Alert as Alert;
 
 class LogController extends Controller
 {
@@ -83,6 +84,8 @@ class LogController extends Controller
 
 	/**
 	 * Deletes a log file.
+	 *
+	 * TODO: make it work no matter the flysystem driver (S3 Bucket, etc).
 	 */
 	public function delete($file_name)
 	{
