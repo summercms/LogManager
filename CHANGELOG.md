@@ -21,6 +21,12 @@ All Notable changes to `LogManager` will be documented in this file
 
 
 
+## [2.3.3] - 2016-03-12
+
+### Fixed
+- Lang files are pushed in the correct folder now. For realsies.
+
+
 ## 2.3.2 - 2016-03-12
 
 ### Fixed

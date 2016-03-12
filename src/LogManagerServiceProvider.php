@@ -25,7 +25,7 @@ class LogManagerServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
 
         // publish lang files
-        $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang'), ], 'lang');
+        $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang/vendor/backpack'), ], 'lang');
     }
 
     /**
