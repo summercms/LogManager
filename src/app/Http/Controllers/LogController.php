@@ -34,6 +34,7 @@ class LogController extends Controller
 
 		// reverse the logs, so the newest one would be on top
 		$this->data['logs'] = array_reverse($this->data['logs']);
+		$this->data['title'] = trans('backpack::logmanager.log_manager');
 
 		return view("logmanager::logs", $this->data);
 	}
@@ -55,6 +56,7 @@ class LogController extends Controller
 									'last_modified' => $disk->lastModified('logs/'.$file_name),
 									'content' => $disk->get('logs/'.$file_name),
 									];
+			$this->data['title'] = trans('backpack::logmanager.preview').' '.trans('backpack::logmanager.logs');
 
 			return view("logmanager::log_item", $this->data);
 		}

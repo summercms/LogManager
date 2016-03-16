@@ -20,6 +20,11 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.4] - 2016-03-16
+
+### Fixed
+- Added page title.
+
 
 ## [2.3.3] - 2016-03-12
 
