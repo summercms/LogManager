@@ -9,6 +9,8 @@
 
 An interface to preview, download and delete Laravel log files.
 
+**Subscribe to the [Mailchimp list](http://eepurl.com/bUEGjf) to be up to date with the community.** 
+
 ## Install
 
 1) Install via composer:
