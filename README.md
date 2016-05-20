@@ -5,6 +5,7 @@
 [![Build Status](https://img.shields.io/travis/laravel-backpack/logmanager/master.svg?style=flat-square)](https://travis-ci.org/laravel-backpack/logmanager)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/laravel-backpack/logmanager.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-backpack/logmanager/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/laravel-backpack/logmanager.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-backpack/logmanager)
+[![Style CI](https://styleci.io/repos/52886512/shield)](https://styleci.io/repos/52886512)
 [![Total Downloads](https://img.shields.io/packagist/dt/backpack/logmanager.svg?style=flat-square)](https://packagist.org/packages/backpack/crud)
 
 An interface to preview, download and delete Laravel log files.
