@@ -20,6 +20,13 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.5] - 2016-06-02
+
+### Fixed
+- Using the Admin middleware instead of Auth, as of Backpack\Base v0.6.0;
+- Moved routes definition to LogManagerServiceProvider instead of routes.php file;
+
+
 ## [2.3.4] - 2016-03-16
 
 ### Fixed

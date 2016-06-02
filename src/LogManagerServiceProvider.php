@@ -4,6 +4,7 @@ namespace Backpack\LogManager;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Route;
 
 class LogManagerServiceProvider extends ServiceProvider
 {
@@ -38,7 +39,14 @@ class LogManagerServiceProvider extends ServiceProvider
     public function setupRoutes(Router $router)
     {
         $router->group(['namespace' => 'Backpack\LogManager\app\Http\Controllers'], function ($router) {
-            require __DIR__.'/app/Http/routes.php';
+            // Admin Interface Routes
+            Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function () {
+                // Logs
+                Route::get('log', 'LogController@index');
+                Route::get('log/preview/{file_name}', 'LogController@preview');
+                Route::get('log/download/{file_name}', 'LogController@download');
+                Route::delete('log/delete/{file_name}', 'LogController@delete');
+            });
         });
     }
 
