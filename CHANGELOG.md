@@ -20,6 +20,13 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+
+## [2.3.6] - 2016-07-31
+
+### Added
+- Bogus unit tests. At least we'be able to use travis-ci for requirements errors, until full unit tests are done.
+
+
 ## [2.3.5] - 2016-06-02
 
 ### Fixed
