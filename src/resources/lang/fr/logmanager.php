@@ -28,6 +28,6 @@ return [
       'delete_cancel_message'       => 'Le journal n’a PAS été supprimé.',
       'delete_error_message'        => 'Le journal n’a PAS été supprimé.',
       'delete_confirmation_message' => 'Le journal a été supprimé avec succès.',
-      'log_file_doesnt_exist'       => "Ce journal n’existe plus.",
+      'log_file_doesnt_exist'       => 'Ce journal n’existe plus.',
 
 ];
