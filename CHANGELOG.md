@@ -20,6 +20,12 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.7] - 2016-09-22
+
+### Added
+- French translations - thanks to [7ute](https://github.com/7ute);
+
+
 
 ## [2.3.6] - 2016-07-31
 
