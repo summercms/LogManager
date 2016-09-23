@@ -20,6 +20,12 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.8] - 2016-09-23
+
+### Fixed
+- Breadcrumbs and routes now follow the route_prefix set in the config/backpack/base.php file- thanks to [Twaambo Haamucenje](https://github.com/twoSeats);
+
+
 ## [2.3.7] - 2016-09-22
 
 ### Added
