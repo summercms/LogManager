@@ -24,6 +24,7 @@ All Notable changes to `LogManager` will be documented in this file
 
 ### Fixed
 - Breadcrumbs and routes now follow the route_prefix set in the config/backpack/base.php file- thanks to [Twaambo Haamucenje](https://github.com/twoSeats);
+- Breadcrumb first item now shows the project name correctly;
 
 
 ## [2.3.7] - 2016-09-22
