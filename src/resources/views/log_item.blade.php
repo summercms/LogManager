@@ -6,7 +6,7 @@
 	    {{ trans('backpack::logmanager.log_manager') }}<small>{{ trans('backpack::logmanager.log_manager_description') }}</small>
 	  </h1>
 	  <ol class="breadcrumb">
-	    <li><a href="{{ url(config('backpack.base.route_prefix', 'admin')) }}">{{ config('backpack.base.project_name') }}</a></li>
+      <li><a href="{{ url(config('backpack.base.route_prefix'),'dashboard') }}">{{ trans('backpack::crud.admin') }}</a></li>
       <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}">{{ trans('backpack::logmanager.log_manager') }}</a></li>
       <li class="active">{{ trans('backpack::logmanager.preview') }}</li>
 	  </ol>
