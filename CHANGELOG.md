@@ -20,6 +20,13 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.9] - 2017-01-21
+
+### Added
+- Ability to publish views;
+- Ability to overwrite views the same way you overwrite views in CRUD;
+
+
 ## [2.3.8] - 2016-09-23
 
 ### Fixed

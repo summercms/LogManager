@@ -22,11 +22,18 @@ class LogManagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // LOAD THE VIEWS
+        // - first the published/overwritten views (in case they have any changes)
+        $this->loadViewsFrom(resource_path('views/vendor/backpack/logmanager'), 'logmanager');
+        // - then the stock views that come with the package, in case a published view might be missing
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'logmanager');
+
         $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
 
         // publish lang files
         $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')], 'lang');
+        // publish the views
+        $this->publishes([__DIR__.'/resources/views' => resource_path('views/vendor/backpack/logmanager')], 'views');
     }
 
     /**
