@@ -28,6 +28,6 @@ return [
       'delete_cancel_message'       => '日志文件未删除。',
       'delete_error_message'        => '日志文件未删除。',
       'delete_confirmation_message' => '日志已删除。',
-      'log_file_doesnt_exist'       => "日志文件不存在。",
+      'log_file_doesnt_exist'       => '日志文件不存在。',
 
 ];
