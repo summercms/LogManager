@@ -28,6 +28,6 @@ return [
       'delete_cancel_message'       => 'Het log bestand is NIET verwijderd.',
       'delete_error_message'        => 'Het log bestand is NIET verwijderd.',
       'delete_confirmation_message' => 'Het log bestand is verwijderd.',
-      'log_file_doesnt_exist'       => "Het log bestand bestaat niet.",
+      'log_file_doesnt_exist'       => 'Het log bestand bestaat niet.',
 
 ];
