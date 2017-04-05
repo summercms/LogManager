@@ -20,6 +20,15 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.10] - 2017-04-05
+
+### Added
+- Dutch translation (thanks to [Mark van Beek](https://github.com/chancezeus));
+
+### Fixed
+- App namespace issue;
+
+
 ## [2.3.9] - 2017-01-21
 
 ### Added
