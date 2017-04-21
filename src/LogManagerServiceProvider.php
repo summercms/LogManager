@@ -28,8 +28,6 @@ class LogManagerServiceProvider extends ServiceProvider
         // - then the stock views that come with the package, in case a published view might be missing
         $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'logmanager');
 
-        $this->loadTranslationsFrom(realpath(__DIR__.'/resources/lang'), 'backpack');
-
         // publish lang files
         $this->publishes([__DIR__.'/resources/lang' => resource_path('lang/vendor/backpack')], 'lang');
         // publish the views
