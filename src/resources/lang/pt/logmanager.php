@@ -28,6 +28,6 @@ return [
       'delete_cancel_message'       => 'O ficheiro de log NÃO foi apagado.',
       'delete_error_message'        => 'O ficheiro de log NÃO foi apagado.',
       'delete_confirmation_message' => 'O ficheiro de log foi apagado.',
-      'log_file_doesnt_exist'       => "O ficheiro de log não existe.",
+      'log_file_doesnt_exist'       => 'O ficheiro de log não existe.',
 
 ];
