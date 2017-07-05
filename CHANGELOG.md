@@ -21,6 +21,13 @@ All Notable changes to `LogManager` will be documented in this file
 
 
 
+## [2.3.12] - 2017-07-05
+
+### Added
+- Portugese translation (thanks to [Toni Almeida](https://github.com/promatik));
+- Portugese (Brasilian) translation (thanks to [Guilherme Augusto Henschel](https://github.com/cenoura));
+
+
 ## [2.3.11] - 2017-04-21
 
 ### Removed
