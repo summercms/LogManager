@@ -20,6 +20,11 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.13] - 2017-07-06
+
+### Added
+- overwritable routes file;
+
 
 ## [2.3.12] - 2017-07-05
 
