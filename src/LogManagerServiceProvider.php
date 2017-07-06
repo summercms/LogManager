@@ -16,6 +16,13 @@ class LogManagerServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
+     * Where the route file lives, both inside the package and in the app (if overwritten).
+     *
+     * @var string
+     */
+    public $routeFilePath = '/routes/backpack/logmanager.php';
+
+    /**
      * Perform post-registration booting of services.
      *
      * @return void
@@ -43,16 +50,15 @@ class LogManagerServiceProvider extends ServiceProvider
      */
     public function setupRoutes(Router $router)
     {
-        $router->group(['namespace' => 'Backpack\LogManager\app\Http\Controllers'], function ($router) {
-            // Admin Interface Routes
-            Route::group(['middleware' => ['web', 'auth'], 'prefix' => config('backpack.base.route_prefix', 'admin')], function () {
-                // Logs
-                Route::get('log', 'LogController@index');
-                Route::get('log/preview/{file_name}', 'LogController@preview');
-                Route::get('log/download/{file_name}', 'LogController@download');
-                Route::delete('log/delete/{file_name}', 'LogController@delete');
-            });
-        });
+        // by default, use the routes file provided in vendor
+        $routeFilePathInUse = __DIR__.$this->routeFilePath;
+
+        // but if there's a file with the same name in routes/backpack, use that one
+        if (file_exists(base_path().$this->routeFilePath)) {
+            $routeFilePathInUse = base_path().$this->routeFilePath;
+        }
+
+        $this->loadRoutesFrom($routeFilePathInUse);
     }
 
     /**
