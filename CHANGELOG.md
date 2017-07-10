@@ -19,6 +19,11 @@ All Notable changes to `LogManager` will be documented in this file
 ### Security
 - Nothing
 
+## [2.3.14] - 2017-07-10
+
+### Added
+- Romanian language file;
+
 
 ## [2.3.13] - 2017-07-06
 
