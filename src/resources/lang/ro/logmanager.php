@@ -28,6 +28,6 @@ return [
       'delete_cancel_message'       => 'Fișierul NU a fost șters.',
       'delete_error_message'        => 'Fișierul NU a fost șters.',
       'delete_confirmation_message' => 'Fișierul a fost șters.',
-      'log_file_doesnt_exist'       => "Fișierul nu există.",
+      'log_file_doesnt_exist'       => 'Fișierul nu există.',
 
 ];
