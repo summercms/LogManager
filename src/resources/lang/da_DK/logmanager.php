@@ -29,6 +29,6 @@ return [
       'delete_cancel_message'       => 'Denne log fil er IKKE blevet slettet.',
       'delete_error_message'        => 'Denne log fil blev IKKE blevet slettet.',
       'delete_confirmation_message' => 'Denne log fil blev slettet.',
-      'log_file_doesnt_exist'       => "Denne log fil eksisterer ikke.",
+      'log_file_doesnt_exist'       => 'Denne log fil eksisterer ikke.',
 
 ];
