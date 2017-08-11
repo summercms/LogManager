@@ -19,6 +19,13 @@ All Notable changes to `LogManager` will be documented in this file
 ### Security
 - Nothing
 
+
+## [2.3.15] - 2017-08-11
+
+## Added
+- Danish (da_DK) language files, thanks to [Frederik Rabøl](https://github.com/Xayer);
+
+
 ## [2.3.14] - 2017-07-10
 
 ### Added
