@@ -20,6 +20,12 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.16] - 2017-08-30
+
+## Added
+- package auto-discovery for Laravel 5.5 apps;
+
+
 ## [2.3.15] - 2017-08-11
 
 ## Added
