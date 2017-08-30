@@ -49,13 +49,7 @@ or directly in your config/app.php file:
     'log' => env('APP_LOG', 'daily'),
 ```
 
-5) [Optional] Publish the lang files if you think you'll need to modify them.
-
-```bash
-    php artisan vendor:publish --provider="Backpack\LogManager\LogManagerServiceProvider"
-```
-
-6) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
 ```html
 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}"><i class="fa fa-terminal"></i> <span>Logs</span></a></li>
