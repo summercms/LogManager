@@ -1,9 +1,10 @@
 <?php
 
 namespace Backpack\LogManager\app\Classes;
+
 use Illuminate\Support\Facades\Storage;
 
-/***
+/**
  * Class LogViewer
  * @package Backpack\LogManager\app\Classes
  *
@@ -17,6 +18,12 @@ class LogViewer
      */
     private static $file;
 
+
+    /**
+     * Map debug levels to Bootstrap classes
+     *
+     * @var array
+     */
     private static $levels_classes = [
         'debug'     => 'info',
         'info'      => 'info',
@@ -29,6 +36,11 @@ class LogViewer
         'processed' => 'info',
     ];
 
+    /**
+     * Map debug levels to icon classes
+     *
+     * @var array
+     */
     private static $levels_imgs = [
         'debug'     => 'info',
         'info'      => 'info',
@@ -58,27 +70,30 @@ class LogViewer
         'processed',
     ];
 
+    /**
+     * Arbitrary max file size
+     */
     const MAX_FILE_SIZE = 52428800;
 
     /**
      * @param string $file
+     *
      * @throws \Exception
      */
     public static function setFile($file)
     {
-        $file = self::pathToLogFile($file);
+        $file = static::pathToLogFile($file);
 
         if (app('files')->exists($file)) {
-            self::$file = $file;
+            static::$file = $file;
         }
     }
 
     /**
      * @param string $file
+     * @return string
      *
      * @throws \Exception
-     *
-     * @return string
      */
     public static function pathToLogFile($file)
     {
@@ -103,63 +118,66 @@ class LogViewer
      */
     public static function getFileName()
     {
-        return basename(self::$file);
+        return basename(static::$file);
     }
 
     /**
-     * @return array
      * @throws \Illuminate\Container\EntryNotFoundException
+     *
+     * @return array
      */
     public static function all()
     {
         $log = [];
 
-        $pattern = '/\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\].*/';
-
-        if (!self::$file) {
-            $log_file = self::getFiles();
+        if (!static::$file) {
+            $log_file = static::getFiles();
             if (!count($log_file)) {
                 return [];
             }
-            self::$file = $log_file[0];
+            static::$file = $log_file[0];
         }
 
-        if (app('files')->size(self::$file) > self::MAX_FILE_SIZE) {
-            return;
+        if (app('files')->size(static::$file) > static::MAX_FILE_SIZE) {
+            return [];
         }
 
-        $file = app('files')->get(self::$file);
+        $file = app('files')->get(static::$file);
+
+        $pattern = '/\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\].*/';
 
         preg_match_all($pattern, $file, $headings);
+
 
         if (!is_array($headings)) {
             return $log;
         }
 
-        $log_data = preg_split($pattern, $file);
+        $stack_trace = preg_split($pattern, $file);
 
-        if ($log_data[0] < 1) {
-            array_shift($log_data);
+        if ($stack_trace[0] < 1) {
+            array_shift($stack_trace);
         }
 
         foreach ($headings as $h) {
             for ($i = 0, $j = count($h); $i < $j; $i++) {
-                foreach (self::$log_levels as $level) {
+                foreach (static::$log_levels as $level) {
                     if (strpos(strtolower($h[$i]), '.'.$level) || strpos(strtolower($h[$i]), $level.':')) {
-                        preg_match('/^\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\](?:.*?(\w+)\.|.*?)'.$level.': (.*?)( in .*?:[0-9]+)?$/i', $h[$i], $current);
-                        if (!isset($current[3])) {
+                        $pattern = '/^\[(?P<date>(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}))\](?:.*?(?P<context>(\w+))\.|.*?)'.$level.': (?P<text>.*?)(?P<in_file> in .*?:[0-9]+)?$/i';
+                        preg_match($pattern, $h[$i], $current);
+                        if (!isset($current['text'])) {
                             continue;
                         }
 
                         $log[] = [
-                            'context'     => $current[2],
+                            'context'     => $current['context'],
                             'level'       => $level,
-                            'level_class' => self::$levels_classes[$level],
-                            'level_img'   => self::$levels_imgs[$level],
-                            'date'        => $current[1],
-                            'text'        => $current[3],
-                            'in_file'     => isset($current[4]) ? $current[4] : null,
-                            'stack'       => preg_replace("/^\n*/", '', $log_data[$i]),
+                            'level_class' => static::$levels_classes[$level],
+                            'level_img'   => static::$levels_imgs[$level],
+                            'date'        => $current['date'],
+                            'text'        => $current['text'],
+                            'in_file'     => isset($current['in_file']) ? $current['in_file'] : null,
+                            'stack'       => preg_replace("/^\n*/", '', $stack_trace[$i]),
                         ];
                     }
                 }
@@ -182,13 +200,13 @@ class LogViewer
 
         if ($basename && is_array($files)) {
             foreach ($files as $k => $file) {
-                $disk = Storage::disk('storage');
+                $disk      = Storage::disk('storage');
                 $file_name = basename($file);
 
                 if ($disk->exists('logs/'.$file_name)) {
                     $files[$k] = [
-                        'file_name' => $file_name,
-                        'file_size' => $disk->size('logs/' . $file_name),
+                        'file_name'     => $file_name,
+                        'file_size'     => $disk->size('logs/' . $file_name),
                         'last_modified' => $disk->lastModified('logs/' . $file_name),
                     ];
                 }

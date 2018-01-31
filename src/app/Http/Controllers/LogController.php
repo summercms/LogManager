@@ -9,6 +9,7 @@ class LogController extends Controller
 {
     /**
      * Lists all log files.
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
@@ -29,6 +30,7 @@ class LogController extends Controller
         LogViewer::setFile(base64_decode($file_name));
 
         $logs = LogViewer::all();
+        dd($logs);
         if(count($logs) <= 0) {
             abort(404, trans('backpack::logmanager.log_file_doesnt_exist'));
         }
@@ -45,6 +47,7 @@ class LogController extends Controller
      *
      * @param $file_name
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     *
      * @throws \Exception
      */
     public function download($file_name)
@@ -57,6 +60,7 @@ class LogController extends Controller
      *
      * @param $file_name
      * @return string
+     *
      * @throws \Exception
      */
     public function delete($file_name)
