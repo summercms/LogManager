@@ -30,7 +30,7 @@ class LogController extends Controller
         LogViewer::setFile(base64_decode($file_name));
 
         $logs = LogViewer::all();
-        dd($logs);
+
         if(count($logs) <= 0) {
             abort(404, trans('backpack::logmanager.log_file_doesnt_exist'));
         }
