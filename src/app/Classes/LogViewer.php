@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Storage;
 
 /**
  * Class LogViewer
- * @package Backpack\LogManager\app\Classes
- *
- * Credits https://github.com/rap2hpoutre/laravel-log-viewer
  */
 
 class LogViewer
@@ -20,7 +17,7 @@ class LogViewer
 
 
     /**
-     * Map debug levels to Bootstrap classes
+     * Map debug levels to Bootstrap classes.
      *
      * @var array
      */
@@ -37,7 +34,7 @@ class LogViewer
     ];
 
     /**
-     * Map debug levels to icon classes
+     * Map debug levels to icon classes.
      *
      * @var array
      */
@@ -71,7 +68,7 @@ class LogViewer
     ];
 
     /**
-     * Arbitrary max file size
+     * Arbitrary max file size.
      */
     const MAX_FILE_SIZE = 52428800;
 
@@ -91,9 +88,10 @@ class LogViewer
 
     /**
      * @param string $file
-     * @return string
      *
-     * @throws \Exception
+     * @throws
+     *
+     * @return string
      */
     public static function pathToLogFile($file)
     {
@@ -148,7 +146,6 @@ class LogViewer
 
         preg_match_all($pattern, $file, $headings);
 
-
         if (!is_array($headings)) {
             return $log;
         }
@@ -200,14 +197,14 @@ class LogViewer
 
         if ($basename && is_array($files)) {
             foreach ($files as $k => $file) {
-                $disk      = Storage::disk('storage');
+                $disk = Storage::disk('storage');
                 $file_name = basename($file);
 
                 if ($disk->exists('logs/'.$file_name)) {
                     $files[$k] = [
                         'file_name'     => $file_name,
-                        'file_size'     => $disk->size('logs/' . $file_name),
-                        'last_modified' => $disk->lastModified('logs/' . $file_name),
+                        'file_size'     => $disk->size('logs/'.$file_name),
+                        'last_modified' => $disk->lastModified('logs/'.$file_name),
                     ];
                 }
             }
@@ -215,4 +212,5 @@ class LogViewer
 
         return array_values($files);
     }
+
 }

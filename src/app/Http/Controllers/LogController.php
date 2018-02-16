@@ -31,7 +31,7 @@ class LogController extends Controller
 
         $logs = LogViewer::all();
 
-        if(count($logs) <= 0) {
+        if (count($logs) <= 0) {
             abort(404, trans('backpack::logmanager.log_file_doesnt_exist'));
         }
 
@@ -46,9 +46,10 @@ class LogController extends Controller
      * Downloads a log file.
      *
      * @param $file_name
-     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      *
      * @throws \Exception
+     *
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
     public function download($file_name)
     {
@@ -59,16 +60,18 @@ class LogController extends Controller
      * Deletes a log file.
      *
      * @param $file_name
-     * @return string
      *
      * @throws \Exception
+     *
+     * @return string
      */
     public function delete($file_name)
     {
-        if(app('files')->delete(LogViewer::pathToLogFile(base64_decode($file_name)))) {
+        if (app('files')->delete(LogViewer::pathToLogFile(base64_decode($file_name)))) {
             return 'success';
         }
 
         abort(404, trans('backpack::logmanager.log_file_doesnt_exist'));
     }
+
 }
