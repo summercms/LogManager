@@ -20,6 +20,12 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.17] - 2018-03-13
+
+## Added
+- spanish translations;
+
+
 ## [2.3.16] - 2017-08-30
 
 ## Added
