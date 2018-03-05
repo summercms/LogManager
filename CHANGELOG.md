@@ -20,6 +20,12 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.18] - 2018-03-13
+
+## Added
+- better preview, thanks to [Shamar Kellman](https://github.com/ShamarKellman)'s PR #21;
+
+
 ## [2.3.17] - 2018-03-13
 
 ## Added
