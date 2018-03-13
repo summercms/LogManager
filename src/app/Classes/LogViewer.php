@@ -5,16 +5,14 @@ namespace Backpack\LogManager\app\Classes;
 use Illuminate\Support\Facades\Storage;
 
 /**
- * Class LogViewer
+ * Class LogViewer.
  */
-
 class LogViewer
 {
     /**
      * @var string file
      */
     private static $file;
-
 
     /**
      * Map debug levels to Bootstrap classes.
@@ -212,5 +210,4 @@ class LogViewer
 
         return array_values($files);
     }
-
 }

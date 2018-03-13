@@ -73,5 +73,4 @@ class LogController extends Controller
 
         abort(404, trans('backpack::logmanager.log_file_doesnt_exist'));
     }
-
 }
