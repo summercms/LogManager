@@ -20,6 +20,15 @@ All Notable changes to `LogManager` will be documented in this file
 - Nothing
 
 
+## [2.3.19] - 2018-05-02
+
+### Fixed
+- ```backpack_middleware()``` is automatically added to the routes;
+
+### Removed
+- support for Backpack\Base version below 0.9;
+
+
 ## [2.3.18] - 2018-03-13
 
 ## Added
