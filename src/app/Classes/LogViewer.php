@@ -195,14 +195,14 @@ class LogViewer
 
         if ($basename && is_array($files)) {
             foreach ($files as $k => $file) {
-                $disk = Storage::disk('storage');
+                $disk = Storage::disk(config('backpack.base.root_disk_name'));
                 $file_name = basename($file);
 
-                if ($disk->exists('logs/'.$file_name)) {
+                if ($disk->exists('storage/logs/'.$file_name)) {
                     $files[$k] = [
                         'file_name'     => $file_name,
-                        'file_size'     => $disk->size('logs/'.$file_name),
-                        'last_modified' => $disk->lastModified('logs/'.$file_name),
+                        'file_size'     => $disk->size('storage/logs/'.$file_name),
+                        'last_modified' => $disk->lastModified('storage/logs/'.$file_name),
                     ];
                 }
             }

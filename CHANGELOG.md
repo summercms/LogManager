@@ -19,6 +19,11 @@ All Notable changes to `LogManager` will be documented in this file
 ### Security
 - Nothing
 
+## [2.3.20] - 2018-05-02
+
+### Removed
+- custom filesystem disk for this package; since we're using Backpack\Base 0.9.x we can use the root filesystem disk that Base is using; this way, installation has a lot fewer steps;
+
 
 ## [2.3.19] - 2018-05-02
 
