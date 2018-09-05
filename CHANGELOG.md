@@ -19,6 +19,14 @@ All Notable changes to `LogManager` will be documented in this file
 ### Security
 - Nothing
 
+---
+
+## [2.3.21] - 2018-09-05
+
+### Fixed
+- in routes, replaced ```backpack_middleware()``` call with its result, to prevent errors when helpers are NOT loaded before routes, and ```php artisan package:discover``` can't execute;
+
+
 ## [2.3.20] - 2018-05-02
 
 ### Removed
