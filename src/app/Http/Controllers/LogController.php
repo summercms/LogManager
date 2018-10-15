@@ -14,7 +14,7 @@ class LogController extends Controller
      */
     public function index()
     {
-        $this->data['files'] = LogViewer::getFiles(true);
+        $this->data['files'] = LogViewer::getFiles(true, true);
         $this->data['title'] = trans('backpack::logmanager.log_manager');
 
         return view('logmanager::logs', $this->data);
