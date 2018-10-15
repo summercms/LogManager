@@ -21,6 +21,12 @@ All Notable changes to `LogManager` will be documented in this file
 
 ---
 
+## [2.3.23] - 2018-10-15
+
+### Fixed
+- #27 - only load custom views if the directory exists - this makes the ```php artisan view:cache``` command work again;
+
+
 ## [2.3.22] - 2018-10-15
 
 ### Added
