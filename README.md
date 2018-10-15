@@ -8,11 +8,11 @@
 [![Style CI](https://styleci.io/repos/52886512/shield)](https://styleci.io/repos/52886512)
 [![Total Downloads](https://img.shields.io/packagist/dt/backpack/logmanager.svg?style=flat-square)](https://packagist.org/packages/backpack/crud)
 
-An interface to preview, download and delete Laravel log files.
+A simple interface to preview, download and delete Laravel log files.
 
 
-> ### Security updates and breaking changes
-> Please **[subscribe to the Backpack Newsletter](http://backpackforlaravel.com/newsletter)** so you can find out about any security updates, breaking changes or major features. We send an email every 1-2 months.
+> ### Need an advanced logging interface?
+> You can use [eduardorandah's Backpack package](https://github.com/eduardoarandah/backpacklogviewer), which easily brings the popular ArcaneDev/LogViewer into your Backpack admin panel.
 
 ## Install
 
@@ -23,6 +23,32 @@ composer require backpack/logmanager
 # [optional] Add a sidebar_content item for it
 php artisan backpack:base:add-sidebar-content "<li><a href='{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}'><i class='fa fa-terminal'></i> <span>Logs</span></a></li>"
 ```
+
+**For a better user experience, make sure Laravel is configured to create a new log file for each day.** That way, you can browse log entries by day too. You can do that in your ```config/logging.php``` file. 
+
+From a default Laravel configuration, make sure the ```daily``` channel is inside the ```stack``` channel, which is used by default:
+
+```php
+    'channels' => [
+        'stack' => [
+            'driver'   => 'stack',
+            'channels' => ['daily'],
+        ],
+        'single' => [
+            'driver' => 'single',
+            'path'   => storage_path('logs/laravel.log'),
+            'level'  => 'debug',
+        ],
+        'daily' => [
+            'driver' => 'daily',
+            'path'   => storage_path('logs/laravel.log'),
+            'level'  => 'debug',
+            'days'   => 7,
+        ],
+```
+
+You can change the number of days, or path, level, etc inside this the ```daily``` channel.
+
 
 ## Usage
 

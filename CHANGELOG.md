@@ -21,6 +21,13 @@ All Notable changes to `LogManager` will be documented in this file
 
 ---
 
+## [2.3.22] - 2018-10-15
+
+### Added
+- log files are now ordered by date modified, descending;
+- mentioned the better logging package in the readme file;
+
+
 ## [2.3.21] - 2018-09-05
 
 ### Fixed
