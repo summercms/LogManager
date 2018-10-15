@@ -208,8 +208,8 @@ class LogViewer
                 }
             }
 
-            if($sort_by_date){
-                usort($files, function($a, $b) {
+            if ($sort_by_date) {
+                usort($files, function ($a, $b) {
                     return $b['last_modified'] - $a['last_modified'];
                 });
             }
