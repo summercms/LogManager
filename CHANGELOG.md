@@ -21,6 +21,10 @@ All Notable changes to `LogManager` will be documented in this file
 
 ---
 
+## [2.3.24] - 2018-11-22
+
+- added support for Base 1.0.x
+
 ## [2.3.23] - 2018-10-15
 
 ### Fixed
