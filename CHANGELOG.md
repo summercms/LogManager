@@ -21,6 +21,10 @@ All Notable changes to `LogManager` will be documented in this file
 
 ---
 
+## [2.3.25] - 2019-02-27
+
+- added support for Base 1.1.x and dev-upgrade, so that it can be installed on Laravel 5.8;
+
 ## [2.3.24] - 2018-11-22
 
 - added support for Base 1.0.x
