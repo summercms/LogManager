@@ -27,7 +27,7 @@ class LogController extends Controller
      */
     public function preview($file_name)
     {
-        LogViewer::setFile(base64_decode($file_name));
+        LogViewer::setFile(decrypt($file_name));
 
         $logs = LogViewer::all();
 
@@ -37,7 +37,7 @@ class LogController extends Controller
 
         $this->data['logs'] = $logs;
         $this->data['title'] = trans('backpack::logmanager.preview').' '.trans('backpack::logmanager.logs');
-        $this->data['file_name'] = base64_decode($file_name);
+        $this->data['file_name'] = decrypt($file_name);
 
         return view('logmanager::log_item', $this->data);
     }
@@ -53,7 +53,7 @@ class LogController extends Controller
      */
     public function download($file_name)
     {
-        return response()->download(LogViewer::pathToLogFile(base64_decode($file_name)));
+        return response()->download(LogViewer::pathToLogFile(decrypt($file_name)));
     }
 
     /**
@@ -67,7 +67,7 @@ class LogController extends Controller
      */
     public function delete($file_name)
     {
-        if (app('files')->delete(LogViewer::pathToLogFile(base64_decode($file_name)))) {
+        if (app('files')->delete(LogViewer::pathToLogFile(decrypt($file_name)))) {
             return 'success';
         }
 
