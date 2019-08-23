@@ -1,23 +1,26 @@
-@extends('backpack::layout')
+@extends(backpack_view('layouts.top_left'))
+
+@php
+  $breadcrumbs = [
+    trans('backpack::crud.admin') => backpack_url('dashboard'),
+    trans('backpack::logmanager.log_manager') => backpack_url('log'),
+    trans('backpack::logmanager.existing_logs') => false,
+  ];
+@endphp
 
 @section('header')
-    <section class="content-header">
-      <h1>
+    <section class="container-fluid">
+      <h2>
         {{ trans('backpack::logmanager.log_manager') }}<small>{{ trans('backpack::logmanager.log_manager_description') }}</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="{{ url(config('backpack.base.route_prefix'),'dashboard') }}">{{ trans('backpack::crud.admin') }}</a></li>
-        <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}">{{ trans('backpack::logmanager.log_manager') }}</a></li>
-        <li class="active">{{ trans('backpack::logmanager.existing_logs') }}</li>
-      </ol>
+      </h2>
     </section>
 @endsection
 
 @section('content')
 <!-- Default box -->
-  <div class="box">
-    <div class="box-body">
-      <table class="table table-hover table-condensed">
+  <div class="card">
+    <div class="card-body p-0">
+      <table class="table table-hover table-condensed pb-0 mb-0">
         <thead>
           <tr>
             <th>#</th>
@@ -37,9 +40,9 @@
             <td>{{ \Carbon\Carbon::createFromTimeStamp($file['last_modified'])->formatLocalized('%H:%M') }}</td>
             <td class="text-right">{{ round((int)$file['file_size']/1048576, 2).' MB' }}</td>
             <td>
-                <a class="btn btn-xs btn-default" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/preview/'. encrypt($file['file_name'])) }}"><i class="fa fa-eye"></i> {{ trans('backpack::logmanager.preview') }}</a>
-                <a class="btn btn-xs btn-default" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/download/'.encrypt($file['file_name'])) }}"><i class="fa fa-cloud-download"></i> {{ trans('backpack::logmanager.download') }}</a>
-                <a class="btn btn-xs btn-danger" data-button-type="delete" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/delete/'.encrypt($file['file_name'])) }}"><i class="fa fa-trash-o"></i> {{ trans('backpack::logmanager.delete') }}</a>
+                <a class="btn btn-sm btn-link" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/preview/'. encrypt($file['file_name'])) }}"><i class="fa fa-eye"></i> {{ trans('backpack::logmanager.preview') }}</a>
+                <a class="btn btn-sm btn-link" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/download/'.encrypt($file['file_name'])) }}"><i class="fa fa-cloud-download"></i> {{ trans('backpack::logmanager.download') }}</a>
+                <a class="btn btn-sm btn-link" data-button-type="delete" href="{{ url(config('backpack.base.route_prefix', 'admin').'/log/delete/'.encrypt($file['file_name'])) }}"><i class="fa fa-trash-o"></i> {{ trans('backpack::logmanager.delete') }}</a>
             </td>
           </tr>
           @endforeach

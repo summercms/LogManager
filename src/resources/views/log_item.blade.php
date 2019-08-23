@@ -1,52 +1,46 @@
-@extends('backpack::layout')
+@extends(backpack_view('layouts.top_left'))
+
+@php
+  $breadcrumbs = [
+    trans('backpack::crud.admin') => backpack_url('dashboard'),
+    trans('backpack::logmanager.log_manager') => backpack_url('log'),
+    trans('backpack::logmanager.preview') => false,
+  ];
+@endphp
 
 @section('header')
-    <section class="content-header">
-      <h1>
-        {{ trans('backpack::logmanager.log_manager') }}<small>{{ trans('backpack::logmanager.log_manager_description') }}</small>
-      </h1>
-      <ol class="breadcrumb">
-      <li><a href="{{ url(config('backpack.base.route_prefix'),'dashboard') }}">{{ trans('backpack::crud.admin') }}</a></li>
-      <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}">{{ trans('backpack::logmanager.log_manager') }}</a></li>
-      <li class="active">{{ trans('backpack::logmanager.preview') }}</li>
-      </ol>
+    <section class="container-fluid">
+      <h2>
+        {{ trans('backpack::logmanager.log_manager') }}<small>{{ trans('backpack::logmanager.file_name') }}: <i>{{ $file_name }}</i></small>
+        <small><a href="{{ backpack_url('log') }}" class="hidden-print font-sm"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::logmanager.back_to_all_logs') }}</a></small>
+      </h2>
     </section>
 @endsection
 
 @section('content')
-
-  <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::logmanager.back_to_all_logs') }}</a><br><br>
-<!-- Default box -->
-  <div class="box">
-    <div class="box-body">
-      <h3>{{ $file_name }}:</h3>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          @forelse($logs as $key => $log)
-            <div class="panel panel-{{ $log['level_class'] }}">
-              <div class="panel-heading" role="tab" id="heading{{ $key }}">
-                <h4 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
-                    <i class="fa fa-{{ $log['level_img'] }}"></i>
-                    <span>[{{ $log['date'] }}]</span>
-                    {{ str_limit($log['text'], 150) }}
-                  </a>
-                </h4>
-              </div>
-              <div id="collapse{{ $key }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ $key }}">
-                <div class="panel-body">
-                  <p>{{$log['text']}}</p>
-                  <pre>
-                    {{ trim($log['stack']) }}
-                  </pre>
-                </div>
-              </div>
-            </div>
-          @empty
-            <h3 class="text-center">No Logs to display.</h3>
-          @endforelse
+  <div id="accordion" role="tablist" aria-multiselectable="true">
+    @forelse($logs as $key => $log)
+      <div class="card mb-0 pb-0 text-white">
+        <div class="card-header bg-{{ $log['level_class'] }}" role="tab" id="heading{{ $key }}">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}" class="text-white">
+              <i class="fa fa-{{ $log['level_img'] }}"></i>
+              <span>[{{ $log['date'] }}]</span>
+              {{ str_limit($log['text'], 150) }}
+            </a>
         </div>
-    </div><!-- /.box-body -->
-  </div><!-- /.box -->
+        <div id="collapse{{ $key }}" class="panel-collapse collapse p-3" role="tabpanel" aria-labelledby="heading{{ $key }}">
+          <div class="panel-body">
+            <p>{{$log['text']}}</p>
+            <pre><code class="php">
+              {{ trim($log['stack']) }}
+            </code></pre>
+          </div>
+        </div>
+      </div>
+    @empty
+      <h3 class="text-center">No Logs to display.</h3>
+    @endforelse
+  </div>
 
 @endsection
 
