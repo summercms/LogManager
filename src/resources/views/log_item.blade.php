@@ -20,7 +20,7 @@
 @section('content')
   <div id="accordion" role="tablist" aria-multiselectable="true">
     @forelse($logs as $key => $log)
-      <div class="card mb-0 pb-0 text-white">
+      <div class="card mb-0 pb-0">
         <div class="card-header bg-{{ $log['level_class'] }}" role="tab" id="heading{{ $key }}">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}" class="text-white">
               <i class="fa fa-{{ $log['level_img'] }}"></i>
