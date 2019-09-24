@@ -2,24 +2,18 @@
 
 All Notable changes to `LogManager` will be documented in this file
 
-## NEXT - YYYY-MM-DD
+---
+
+## [3.0.0] - 2019-09-24
 
 ### Added
-- Nothing
-
-### Deprecated
-- Nothing
-
-### Fixed
-- Nothing
+- Backpack v4 support;
 
 ### Removed
-- Nothing
+- Backpack v3 support;
 
-### Security
-- Nothing
 
----
+--------------
 
 ## [2.3.27] - 2019-09-04
 
