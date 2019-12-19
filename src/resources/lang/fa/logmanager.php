@@ -29,6 +29,6 @@ return [
       'delete_cancel_message'       => 'پرونده سیاهه حذف نشده است.',
       'delete_error_message'        => 'پرونده سیاهه حذف نشده است.',
       'delete_confirmation_message' => 'پرونده سیاهه حذف شد.',
-      'log_file_doesnt_exist'       => "پرونده سیاهه موجود نیست.",
+      'log_file_doesnt_exist'       => 'پرونده سیاهه موجود نیست.',
 
 ];
