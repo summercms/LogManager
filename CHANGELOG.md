@@ -4,6 +4,13 @@ All Notable changes to `LogManager` will be documented in this file
 
 ---
 
+
+## [3.0.3] - 2020-01-14
+
+### Added
+- merged #35 - Indonesian language file;
+
+
 ## [3.0.2] - 2020-01-03
 
 ### Fixed
