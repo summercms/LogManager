@@ -4,6 +4,11 @@ All Notable changes to `LogManager` will be documented in this file
 
 ---
 
+## [3.0.4] - 2020-03-05
+
+### Fixed
+- upgraded PHPUnit;
+
 
 ## [3.0.3] - 2020-01-14
 
