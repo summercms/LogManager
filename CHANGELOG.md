@@ -4,6 +4,14 @@ All Notable changes to `LogManager` will be documented in this file
 
 ---
 
+
+## [3.0.5] - 2020-04-20
+
+### Fixed
+- added support for Russian language @shbov (#38)
+- added names to routes @iMokhles (#37)
+
+
 ## [3.0.4] - 2020-03-05
 
 ### Fixed
