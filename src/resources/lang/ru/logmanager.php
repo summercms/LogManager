@@ -33,6 +33,6 @@ return [
     'delete_cancel_message'       => 'Данный лог не был удален.',
     'delete_error_message'        => 'Данный лог не был удален.',
     'delete_confirmation_message' => 'Данный лог был удален.',
-    'log_file_doesnt_exist'       => "Данный лог не существует.",
+    'log_file_doesnt_exist'       => 'Данный лог не существует.',
 
 ];
