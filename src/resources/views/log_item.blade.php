@@ -25,7 +25,7 @@
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}" class="text-white">
               <i class="fa fa-{{ $log['level_img'] }}"></i>
               <span>[{{ $log['date'] }}]</span>
-              {{ str_limit($log['text'], 150) }}
+              {{ Str::limit($log['text'], 150) }}
             </a>
         </div>
         <div id="collapse{{ $key }}" class="panel-collapse collapse p-3" role="tabpanel" aria-labelledby="heading{{ $key }}">
