@@ -12,7 +12,7 @@
     <section class="container-fluid">
       <h2>
         {{ trans('backpack::logmanager.log_manager') }}<small>{{ trans('backpack::logmanager.file_name') }}: <i>{{ $file_name }}</i></small>
-        <small><a href="{{ backpack_url('log') }}" class="hidden-print font-sm"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::logmanager.back_to_all_logs') }}</a></small>
+        <small><a href="{{ backpack_url('log') }}" class="hidden-print font-sm"><i class="la la-angle-double-left"></i> {{ trans('backpack::logmanager.back_to_all_logs') }}</a></small>
       </h2>
     </section>
 @endsection
@@ -23,7 +23,7 @@
       <div class="card mb-0 pb-0">
         <div class="card-header bg-{{ $log['level_class'] }}" role="tab" id="heading{{ $key }}">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}" class="text-white">
-              <i class="fa fa-{{ $log['level_img'] }}"></i>
+              <i class="la la-{{ $log['level_img'] }}"></i>
               <span>[{{ $log['date'] }}]</span>
               {{ Str::limit($log['text'], 150) }}
             </a>
