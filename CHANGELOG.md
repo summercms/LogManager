@@ -4,7 +4,7 @@ All Notable changes to `LogManager` will be documented in this file
 
 ---
 
-## [4.0.0] - 2020-04-24
+## [4.0.0] - 2020-05-06
 
 ### Added
 - support for Backpack 4.1;
