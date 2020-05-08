@@ -3,6 +3,13 @@
 All Notable changes to `LogManager` will be documented in this file
 
 ---
+IMPORTANT
+---
+
+After version 4.0.0 we no longer use this file to track changes. Please see the Releases tab:
+https://github.com/Laravel-Backpack/LogManager/releases
+
+---
 
 ## [4.0.0] - 2020-05-06
 
