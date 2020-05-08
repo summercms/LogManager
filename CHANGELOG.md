@@ -4,6 +4,16 @@ All Notable changes to `LogManager` will be documented in this file
 
 ---
 
+## [4.0.0] - 2020-05-06
+
+### Added
+- support for Backpack 4.1;
+
+### Removed
+- support for Backpack 4.0 (just because we have ```la la-icon``` instead of ```fa fa-icon```);
+
+--------------
+
 
 ## [3.0.5] - 2020-04-20
 
