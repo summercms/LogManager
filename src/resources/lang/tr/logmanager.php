@@ -29,5 +29,5 @@ return [
     'delete_cancel_message'       => 'Log dosyası silinemedi.',
     'delete_error_message'        => 'Log dosyası silinemedi.',
     'delete_confirmation_message' => 'Log dosyası silindi.',
-    'log_file_doesnt_exist'       => "Log dosyası mevcut değil.",
+    'log_file_doesnt_exist'       => 'Log dosyası mevcut değil.',
 ];
