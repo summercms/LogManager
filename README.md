@@ -11,9 +11,6 @@
 A simple interface to preview, download and delete Laravel log files.
 
 
-> ### Need an advanced logging interface?
-> You can use [eduardorandah's Backpack package](https://github.com/eduardoarandah/backpacklogviewer), which easily brings the popular ArcaneDev/LogViewer into your Backpack admin panel.
-
 ## Install
 
 ``` bash
