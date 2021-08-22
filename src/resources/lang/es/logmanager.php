@@ -29,6 +29,6 @@ return [
     'delete_cancel_message'       => 'El archivo de registro NO se ha eliminado.',
     'delete_error_message'        => 'El archivo de registro NO se ha eliminado.',
     'delete_confirmation_message' => 'Se eliminó el archivo de registro.',
-    'log_file_doesnt_exist'       => "El archivo de registro no existe.",
+    'log_file_doesnt_exist'       => 'El archivo de registro no existe.',
 
 ];
