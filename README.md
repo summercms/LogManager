@@ -51,7 +51,7 @@ You can change the number of days, or path, level, etc inside this the ```daily`
 
 Add a menu element for it or just try at **your-project-domain/admin/log**
 
-![LogManager interface](https://backpackforlaravel.com/uploads/screenshots/log_list.png)
+![LogManager interface](https://user-images.githubusercontent.com/1032474/131472960-be77e37c-313d-4049-ae54-95248cf3ad48.gif)
 
 ## Change log
 
